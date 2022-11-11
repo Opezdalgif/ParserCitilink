@@ -29,6 +29,10 @@ async function DnsScrapper() {
             //Array.from(document.querySelectorAll('.product-characteristics__spec-value').values()).map(el => el.textContent)
             
         })
+        let photo = await dnsPage.evaluate(() =>{
+            return Array.from(document.querySelectorAll('.product-images-slider__img[src]')).map(el => el.getAttribute('src'))
+        })
+        console.log(photo[0])
         console.log(gabarit)
     
 }
